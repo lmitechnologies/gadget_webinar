@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  test-container:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    volumes:
+      - ./test-volume/:/app/test-volume/
+    env_file:
+      - ./.env
+    deploy:
+        resources:
+          reservations:
+            devices:
+              - driver: nvidia
+                count: 1
+                capabilities: [gpu]
+    command: nvidia-smi
+    # stdin_open: true # docker run -i
+    # tty: true        # docker run -t
