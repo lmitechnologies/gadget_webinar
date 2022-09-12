@@ -13,4 +13,5 @@ services:
               - driver: nvidia
                 count: 1
                 capabilities: [gpu]
-    command: bash /app/build_engine.sh
+    command: >
+      bash -c "bash /app/build_engine.sh && bash /app/benchmark.sh" 

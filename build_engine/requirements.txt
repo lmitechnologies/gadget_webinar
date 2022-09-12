@@ -3,3 +3,4 @@ pandas>=1.1.4
 seaborn>=0.11.0
 Pillow>=7.1.2
 tqdm
+pycuda
