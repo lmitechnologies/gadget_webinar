@@ -5,6 +5,6 @@ fi
 
 # generate engine
 mkdir -p /app/build && cd /app/build && cmake /repos/tensorrtx/yolov5 && make
-if [ ! -f /app/yolov5_arm_512x512_s.engine ]; then
-    /app/build/yolov5 -c /app/2022-07-15.yaml -w /app/2022-07-15_512_512_600_s.wts -o /app/yolov5_arm_512x512_s.engine
+if [ ! -f /app/yolov5_512x512_s.engine ]; then
+    /app/build/yolov5 -c /app/2022-07-15.yaml -w /app/2022-07-15_512_512_600_s.wts -o /app/yolov5_512x512_s.engine
 fi
