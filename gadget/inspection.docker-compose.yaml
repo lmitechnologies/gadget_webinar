@@ -206,7 +206,7 @@ services:
     hostname: gadget-sensor-avt-0
     container_name: gadget-sensor-avt-0
     network_mode: host 
-    image: ${DOCKER_REPO}/${DOCKER_PLATFORM}/gadget/sensor_avt:${PACKAGE_VER}
+    image: ${DOCKER_REPO}/${DOCKER_PLATFORM}/gadget/sensor_avt:${SENSOR_VER}
     restart: unless-stopped
     env_file:
       - ./sensor/avt_camera_0.env
