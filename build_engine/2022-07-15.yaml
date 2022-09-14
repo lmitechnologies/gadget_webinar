@@ -1,0 +1,6 @@
+YOLO:
+  model: s # model types: [n/s/m/l/x/n6/s6/m6/l6/x6] or [c/c6 gd gw]
+  input_h: 512
+  input_w: 512
+  num_classes: 4
+  batch_size: 1

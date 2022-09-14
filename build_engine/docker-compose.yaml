@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  generate_trt:
+    build:
+      context: .
+      dockerfile: ./dockerfile
+    volumes:
+      - .:/app
+    deploy:
+        resources:
+          reservations:
+            devices:
+              - driver: nvidia
+                count: 1
+                capabilities: [gpu]
+    command: >
+      bash -c "bash /app/build_engine.sh && bash /app/benchmark.sh" 

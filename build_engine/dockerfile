@@ -1,0 +1,18 @@
+# tensorRT docker image
+FROM nvcr.io/nvidia/pytorch:20.09-py3
+
+# install dependencies
+RUN apt-get update && apt-get install ffmpeg libsm6 libxext6  -y
+RUN python3 -m pip install --upgrade pip setuptools
+COPY ./requirements.txt /app/requirements.txt
+RUN pip install -r /app/requirements.txt
+
+# clone repos
+WORKDIR /repos
+RUN git clone https://github.com/lmitechnologies/yolov5.git
+RUN git clone https://github.com/lmitechnologies/tensorrtx.git
+
+# build libraries
+WORKDIR /app
+RUN git clone https://github.com/jbeder/yaml-cpp.git
+RUN cd /app/yaml-cpp && mkdir build && cd build && cmake -DBUILD_SHARED_LIBS=ON .. && make && make install
