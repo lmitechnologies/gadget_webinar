@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  pipeline_unit_test:
+    container_name: pipeline_unit_test
+    deploy:
+        resources:
+          reservations:
+            devices:
+              - driver: nvidia
+                count: 1
+                capabilities: [gpu]
+    build: 
+      context: ..
+      dockerfile: ./pipeline/pipeline_test.dockerfile
+    volumes:
+      - ./:/home/gadget/workspace/pipeline/
+      - ../data:/home/gadget/workspace/data
+    command: >
+      bash -c "python3 ./pipeline/pipeline_class.py"

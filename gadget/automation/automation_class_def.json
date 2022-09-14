@@ -1,0 +1,49 @@
+{
+    "configs_def": [
+        {
+            "name": "ip_address",
+            "default_value": "10.10.11.110"
+        },
+        {
+            "name": "port",
+            "default_value": "32700"
+        }
+    ],
+    "configs_with_handlers": [
+        {
+            "name": "mark_peeling",
+            "default_value": 1,
+            "handler": "mark_peeling_handler"
+        },
+        {
+            "name": "mark_white",
+            "default_value": 1,
+            "handler": "mark_white_handler"
+        },
+        {
+            "name": "mark_silver",
+            "default_value": 1,
+            "handler": "mark_silver_handler"
+        },
+        {
+            "name": "mark_scuff",
+            "default_value": 1,
+            "handler": "mark_scuff_handler"
+        },
+        {
+            "name": "line_speed",
+            "default_value": 5,
+            "handler": "line_speed_handler"
+        },
+        {
+            "name": "user_ID",
+            "default_value": "Anomymous User",
+            "handler": "user_id_handler"
+        },
+        {
+            "name": "batch_ID",
+            "default_value": "Unspecified Batch",
+            "handler": "batch_id_handler"
+        }
+    ]
+}

@@ -1,0 +1,40 @@
+{
+    "configs_def":[
+        {
+            "name":"yolov5_engine_file",
+            "default_value": "${PIPELINE_SERVER_SETTINGS_MODELS_ROOT}/yolov5_x86_512x512_s.engine"
+        },
+        {
+            "name":"yolov5_plugin_file",
+            "default_value": "${PIPELINE_SERVER_SETTINGS_MODELS_ROOT}/libmyplugins.so"
+        },
+        {
+            "name":"yolov5_class_map",
+            "default_value": {"0":"peeling", "1":"catheter", "2":"white", "3":"scuff"}
+        },
+        {
+            "name": "confidence_scuff",
+            "default_value": 0.5
+        },
+        {
+            "name": "confidence_white",
+            "default_value": 0.5
+        },
+        {
+            "name": "confidence_peeling",
+            "default_value": 0.5
+        },
+        {
+            "name": "confidence_catheter",
+            "default_value": 0.8
+        },
+        {
+            "name": "yolov5_iou_threshold",
+            "default_value": 0.4
+        },
+        {
+            "name": "yolov5_vertical_padding",
+            "default_value": 50
+        }
+    ]
+}
